@@ -29,3 +29,4 @@ Note: The CSV files contain bike share data from Motivate, sampled from the firs
 ### Credits
 - Original repository: https://github.com/udacity/pdsnd_github/
 - Data source: Motivate bike share data via [Kaggle](https://www.kaggle.com/code/scss17/motivate-bike-share-data)
+- Udacity Introduction to Version Control Course

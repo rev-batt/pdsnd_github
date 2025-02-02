@@ -1,17 +1,31 @@
->**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
-
 ### Date created
-Include the date you created this project and README file.
+February 2, 2025
 
 ### Project Title
-Replace the Project Title
+Add Bikeshare data analysis project
 
 ### Description
-Describe what your project is about and what it does
+Implement Python program to analyze US bikeshare data for three cities:
+Chicago, New York City, and Washington. The program provides 
+interactive filtering and statistical analysis of ride data.
 
+Key features:
+ - Interactive CLI for city, month, and day filtering
+ - Statistical analysis of popular times, stations, and routes
+ - User demographic analysis where available
+ - Raw data viewing capabilities
+ - Error handling for user inputs
+ 
 ### Files used
-Include the files used
+`bikeshare.py` 
+
+Locally uses:
+- `chicago.csv`
+- `new_york_city.csv`
+- `washington.csv`
+
+Note: The CSV files contain bike share data from Motivate, sampled from the first six months of 2017. CSV files are not included in this repository.
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+- Original repository: https://github.com/udacity/pdsnd_github/
+- Data source: Motivate bike share data via [Kaggle](https://www.kaggle.com/code/scss17/motivate-bike-share-data)

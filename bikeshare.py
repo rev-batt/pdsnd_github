@@ -21,14 +21,19 @@ def get_filters():
     
     # Initialize variables
     city, month, day = None, None, None
-    mismatch = 'Does not match options.'
-    
+
+    mismatch = {
+        'city': f'Invalid city. Please choose from: {", ".join(CITY_DATA.keys())}',
+        'month': f'Invalid month. Please choose from: {", ".join(valid_months)}',
+        'day': f'Invalid day. Please choose from: {", ".join(valid_days)}'
+    }
+        
     # Get city input
     while city == None:
         city = input('Choose a city by name from this list: Chicago, New York City, Washington: ')
         city = city.lower()
         if city not in CITY_DATA.keys():
-            print(mismatch)
+            print(mismatch['city'])
             city = None
    
     # Get month input
@@ -140,6 +145,11 @@ def station_stats(df):
     station_combo_group = df.groupby(['Start Station', 'End Station']).size().reset_index(name='count')
     station_combo_group = station_combo_group.sort_values('count', ascending=False)
     most_combo = station_combo_group.iloc[0] 
+
+    unique_starts = df['Start Station'].nunique()
+    unique_ends = df['End Station'].nunique()
+    print(f'There are {unique_starts} unique start stations and {unique_ends} unique end stations.')
+
     print(f'Common route: {most_combo}')
 
 
@@ -158,7 +168,8 @@ def trip_duration_stats(df):
 
     # TO DO: display mean travel time
     mean_travel = df['Trip Duration'].mean()
-    print(f'Total trip duration is {total_travel} and mean duration is {mean_travel}')
+
+    print(f'Total trip duration is {total_travel/60:.2f} and mean duration is {mean_travel/60:.2f}')
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)

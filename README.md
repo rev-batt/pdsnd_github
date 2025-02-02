@@ -10,7 +10,7 @@ Chicago, New York City, and Washington. The program provides
 interactive filtering and statistical analysis of ride data.
 
 Key features:
- - Interactive CLI for city, month, and day filtering
+ - Interactive Command Line Interface (CLI) for city, month, and day filtering
  - Statistical analysis of popular times, stations, and routes
  - User demographic analysis where available
  - Raw data viewing capabilities

@@ -145,6 +145,11 @@ def station_stats(df):
     station_combo_group = df.groupby(['Start Station', 'End Station']).size().reset_index(name='count')
     station_combo_group = station_combo_group.sort_values('count', ascending=False)
     most_combo = station_combo_group.iloc[0] 
+
+    unique_starts = df['Start Station'].nunique()
+    unique_ends = df['End Station'].nunique()
+    print(f'There are {unique_starts} unique start stations and {unique_ends} unique end stations.')
+
     print(f'Common route: {most_combo}')
 
 

@@ -21,14 +21,19 @@ def get_filters():
     
     # Initialize variables
     city, month, day = None, None, None
-    mismatch = 'Does not match options.'
-    
+
+    mismatch = {
+        'city': f'Invalid city. Please choose from: {", ".join(CITY_DATA.keys())}',
+        'month': f'Invalid month. Please choose from: {", ".join(valid_months)}',
+        'day': f'Invalid day. Please choose from: {", ".join(valid_days)}'
+    }
+        
     # Get city input
     while city == None:
         city = input('Choose a city by name from this list: Chicago, New York City, Washington: ')
         city = city.lower()
         if city not in CITY_DATA.keys():
-            print(mismatch)
+            print(mismatch['city'])
             city = None
    
     # Get month input
